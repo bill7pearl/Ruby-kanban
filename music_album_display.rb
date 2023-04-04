@@ -74,4 +74,18 @@ class MusicAlbumDisplay
       end
     end
   end
+  private
+
+  def load_data
+    if File.exist?(@filename)
+      data = JSON.parse(File.read(@filename))
+      data.map { |album_data| MusicAlbum.new(album_data['name'], album_data['publish_date'], on_spotify: album_data['on_spotify'], genres: album_data['genres']) }
+    else
+      []
+    end
+  end
+
+  def save_data
+    File.write(@filename, JSON.generate(@albums.map(&:to_h)))
+  end
 end
