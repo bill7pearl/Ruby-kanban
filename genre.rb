@@ -1,3 +1,5 @@
+require_relative 'music_album'
+
 class Genre
   attr_reader :name, :items
 

@@ -1,5 +1,6 @@
 require_relative 'item'
 require_relative 'genre'
+require 'date'
 
 class MusicAlbum < Item
   attr_accessor :name, :genres, :publish_date, :on_spotify
