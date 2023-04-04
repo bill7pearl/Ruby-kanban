@@ -1,3 +1,7 @@
+require 'json'
+require_relative 'music'
+require_relative 'app'
+
 class MusicAlbumDisplay
   def initialize(filename)
     @filename = filename
@@ -74,6 +78,7 @@ class MusicAlbumDisplay
       end
     end
   end
+
   private
 
   def load_data
