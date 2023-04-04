@@ -16,3 +16,9 @@ CREATE TABLE music_albums (
   PRIMARY KEY(id)
 );
 
+------------ Create genre table -------------------
+CREATE TABLE genres (
+  genre_id SERIAL PRIMARY KEY,
+  name VARCHAR(100),
+  PRIMARY KEY(genre_id)
+);
