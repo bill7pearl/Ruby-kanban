@@ -22,4 +22,16 @@ class MusicAlbumDisplay
           end
         end
       end
+      def list_all_genres
+        genres = @albums.map(&:genres).flatten.uniq
+        if genres.empty?
+          puts 'No genres found! 🙁'
+        else
+          puts "************************************************\nAll Genres\n"
+          genres.each do |genre|
+            puts "#{genre}\n"
+          end
+          puts "===========================================================\n"
+        end
+      end
 end
