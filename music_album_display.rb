@@ -34,4 +34,19 @@ class MusicAlbumDisplay
           puts "===========================================================\n"
         end
       end
+
+      def add_album
+        puts 'Enter album title:'
+        name = gets.chomp
+        puts 'Enter date of release (YYYY-MM-DD):'
+        publish_date = gets.chomp
+        puts 'Is it on spotify? (Y/N):'
+        on_spotify = gets.chomp.downcase == 'y'
+        puts 'Enter the genre of the music album:'
+        genres = gets.chomp
+        album = MusicAlbum.new(name, publish_date, on_spotify: on_spotify, genres: genres)
+        @albums << album
+        puts "Album  '#{album.name}' has been added."
+        save_data
+      end
 end
