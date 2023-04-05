@@ -14,7 +14,7 @@ class GameStore
   def add_game(game)
     @games << game
     game.authors.each { |author| add_author(author) }
-    puts "Game '#{game.title}' has been added."
+    puts "Game '#{game.title}' has been added ✅"
     save_data
   end
 
@@ -107,7 +107,7 @@ class GameStore
         return app.main_menu
       else
         puts 'Ooops!!! Invalid option ❌'
-        return main_menu
+        return run
       end
     end
   end
