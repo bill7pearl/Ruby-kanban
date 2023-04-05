@@ -1,8 +1,8 @@
 require_relative 'book'
 require_relative 'label'
 require_relative 'book_methods'
-require_relative 'music_album'
-require_relative 'music_album_store'
+require_relative 'music'
+require_relative 'music_album_display'
 require_relative 'game'
 require_relative 'game_author'
 require 'json'
@@ -40,7 +40,7 @@ class App
     else
       puts 'Invalid choice ❌! Please try again.'
       main_menu
-      return
+      nil
     end
   end
 end

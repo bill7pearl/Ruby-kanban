@@ -23,7 +23,7 @@ class BookMethods
       puts "**************** Books Information 📕 *******************\n"
       @books.each do |book|
         puts "--> Book ID: #{book.id}\n--> Publisher: #{book.publisher}\n--> Cover State: #{book.cover_state}\n--> Archived: #{book.archived}\n"
-        puts "==========================================================="
+        puts '==========================================================='
       end
     end
   end
