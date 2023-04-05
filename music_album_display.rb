@@ -23,7 +23,7 @@ class MusicAlbumDisplay
       puts "***************** Album Information 🎧 ********************\n"
       @albums.each do |album|
         puts "--> Album title: #{album.name}\n--> Released year: #{album.publish_date.year}\n--> Music genre: #{album.genres}\n"
-        puts "===========================================================\n"
+        puts '-' * 50
       end
     end
   end
@@ -37,7 +37,7 @@ class MusicAlbumDisplay
       genres.each do |genre|
         puts "#{genre}\n"
       end
-      puts "===========================================================\n"
+      puts '-' * 50
     end
   end
 
@@ -52,7 +52,7 @@ class MusicAlbumDisplay
     genres = gets.chomp
     album = MusicAlbum.new(name, publish_date, on_spotify: on_spotify, genres: genres)
     @albums << album
-    puts "Album  '#{album.name}' has been added."
+    puts "Album  '#{album.name}' has been added ✅"
     save_data
   end
 
