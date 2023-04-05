@@ -17,6 +17,10 @@ class Game < Item
     add_authors(authors)
   end
 
+  # def self.json_create(object)
+  #   new(object['title'], object['multiplayer'], object['last_played_at'], object['publish_date'], object['authors'])
+  # end
+
   def add_authors(authors)
     authors.each { |author| add_author(author) }
   end
