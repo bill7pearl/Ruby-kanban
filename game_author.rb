@@ -99,8 +99,7 @@ class GameStore
         title = gets.chomp
         puts 'Is the game multiplayer? (Y/N)'
         multiplayer = gets.chomp.downcase == 'y'
-        puts 'Enter the date of the last time the
-   game was played (YYYY/MM/DD):'
+        puts 'Enter the date of the last time the game was played (YYYY/MM/DD):'
         last_played_at = gets.chomp
         puts 'Enter the game\'s publish date (YYYY/MM/DD):'
         publish_date = gets.chomp
@@ -113,6 +112,7 @@ class GameStore
         game.add_author(author)
         add_game(game)
       when 4
+        save_data
         print 'Thanks for using our catalog 😘'
         puts "\n"
         return app.main_menu
@@ -122,4 +122,5 @@ class GameStore
       end
     end
   end
+  
 end
