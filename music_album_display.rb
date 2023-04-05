@@ -74,7 +74,7 @@ class MusicAlbumDisplay
         return app.main_menu
       else
         puts 'Ooops!!! Invalid option ❌'
-        return main_menu
+        return run
       end
     end
   end
