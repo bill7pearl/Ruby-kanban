@@ -43,7 +43,7 @@ class GameStore
 
   def list_authors
     if authors.empty?
-      puts 'There are no authors in the catalog.
+      puts 'There are no authors in the catalog.'
     else
       puts "***************** Author Information 🧑‍🏫 ********************\n"
       authors.each do |author|
@@ -68,7 +68,6 @@ class GameStore
     games_data = JSON.parse(File.read('./data/games.json'), object_class: Game)
     authors_data = JSON.parse(File.read('./data/authors.json'), object_class: Author)
 
-
     @games = games_data.map do |game_data|
       game = Game.new(game_data['title'], game_data['multiplayer'], game_data['last_played_at'], game_data['publish_date'])
       game_data['authors'].each do |author_data|
@@ -77,7 +76,6 @@ class GameStore
       end
       game
     end
-
 
     @authors = authors_data
   end
