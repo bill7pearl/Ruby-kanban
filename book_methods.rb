@@ -23,7 +23,7 @@ class BookMethods
       puts "**************** Books Information 📕 *******************\n"
       @books.each do |book|
         puts "--> Book ID: #{book.id}\n--> Publisher: #{book.publisher}\n--> Cover State: #{book.cover_state}\n--> Archived: #{book.archived}\n"
-        puts '==========================================================='
+        puts '-' * 50
       end
     end
   end
@@ -36,7 +36,7 @@ class BookMethods
       puts "********************* All Labels **********************\n"
       labels.each do |label|
         puts "--> Title: #{label.title}\n--> Color: #{label.color}"
-        puts "===========================================================\n"
+        puts '-' * 50
       end
     end
   end
@@ -60,7 +60,7 @@ class BookMethods
     end
     book = Book.new(publisher, cover_state, labels: labels)
     @books << book
-    puts "Added #{book.publisher}."
+    puts "Publisher '#{book.publisher}' has been added ✅"
     save_data
   end
 

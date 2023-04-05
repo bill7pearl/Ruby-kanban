@@ -29,18 +29,16 @@ class App
       book = BookMethods.new('./data/books.json')
       book.run
     when '2'
-      album = MusicAlbumStore.new('./data/albums.json')
+      album = MusicAlbumDisplay.new('./data/albums.json')
       album.run
-    when '3'
-      game = GameStore.new
-      game.display_menu
+    # when '3'
+
     when '4'
       puts 'Thanks for using 😘'
       nil
     else
       puts 'Invalid choice ❌! Please try again.'
       main_menu
-      nil
     end
   end
 end
