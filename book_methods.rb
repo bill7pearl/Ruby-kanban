@@ -15,7 +15,7 @@ class BookMethods
     puts '3. Add a book'
     puts '4. Exit'
   end
-  
+
   def list_books
     if @books.empty?
       puts 'No books found!🙁'
@@ -23,7 +23,7 @@ class BookMethods
       puts "**************** Books Information 📕 *******************\n"
       @books.each do |book|
         puts "--> Book ID: #{book.id}\n--> Publisher: #{book.publisher}\n--> Cover State: #{book.cover_state}\n--> Archived: #{book.archived}\n"
-         puts "==========================================================="
+        puts "==========================================================="
       end
     end
   end
@@ -40,13 +40,13 @@ class BookMethods
       end
     end
   end
-  
+
   def add_book
     puts 'Enter book publisher:'
     publisher = gets.chomp
     puts 'Enter cover state (good/bad):'
     cover_state = gets.chomp
-  
+
     labels = []
     puts 'Do you want to add a label for this book? (y/n)'
     choice = gets.chomp.downcase
@@ -62,8 +62,8 @@ class BookMethods
     @books << book
     puts "Added #{book.publisher}."
     save_data
-  end  
-  
+  end
+
   def run
     app = App.new
     loop do
@@ -83,12 +83,12 @@ class BookMethods
       else
         puts 'Ooops!!! Invalid option ❌'
         return main_menu
-      end      
+      end
     end
   end
 
   private
-  
+
   def load_data
     if File.exist?(@filename)
       begin
@@ -111,7 +111,7 @@ class BookMethods
       []
     end
   end
-  
+
   def save_data
     File.write(@filename, JSON.generate(@books.map do |book|
       {

@@ -27,6 +27,7 @@ class Game < Item
 
   def add_author(author)
     return if authors.include?(author)
+
     authors << author
     author.add_item(self)
   end

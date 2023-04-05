@@ -20,6 +20,7 @@ class GameStore
 
   def add_author(author)
     return if authors.include?(author)
+
     authors << author
   end
 
