@@ -1,7 +1,7 @@
 ------------ Create database ----------------
 CREATE DATABASE my_catalog;
 
---------- Create book table ----------------
+--------- Create books table ----------------
 CREATE TABLE books (
   id SERIAL PRIMARY KEY,
   publisher VARCHAR,
@@ -20,7 +20,7 @@ CREATE TABLE labels (
   color VARCHAR(50) NOT NULL
 );
 
------------- Create music album table ----------------
+------------ Create music albums table ----------------
 CREATE TABLE music_albums (
   id SERIAL PRIMARY KEY,
   publish_date DATE NOT NULL DEFAULT DATE,
@@ -35,14 +35,14 @@ CREATE TABLE music_albums (
   PRIMARY KEY(id)
 );
 
------------- Create genre table -------------------
+------------ Create genres table -------------------
 CREATE TABLE genres (
   genre_id SERIAL PRIMARY KEY,
   name VARCHAR(100),
   PRIMARY KEY(genre_id)
 );
 
---------------- Create game table ------------------
+--------------- Create games table ------------------
 CREATE TABLE games (
   id SERIAL PRIMARY KEY,
   multiplayer BOOLEAN,
@@ -57,7 +57,7 @@ CREATE TABLE games (
   PRIMARY KEY(id)
 );
 
--------------- Create author table -------------------
+-------------- Create authors table -------------------
 CREATE TABLE authors (
     id SERIAL PRIMARY KEY,
     first_name  VARCHAR(100),
