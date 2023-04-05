@@ -35,7 +35,7 @@ class App
       game.run
 
     when '4'
-      puts 'Thanks for using 😘'
+      puts 'Thanks for using our catalog 😘'
       nil
     else
       puts 'Invalid choice ❌! Please try again.'

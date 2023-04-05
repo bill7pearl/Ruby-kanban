@@ -3,11 +3,11 @@ require_relative 'label'
 
 class Book < Item
   attr_reader :id
-  attr_accessor :publisher, :cover_state, :labels, :archived, :id
+  attr_accessor :publisher, :cover_state, :labels, :archived
 
   def initialize(publisher, cover_state, labels: [], archived: false, id: nil)
     super()
-    @id = Random.rand(1..1000)
+    @id = id || Random.rand(1..1000)
     @publisher = publisher
     @cover_state = cover_state
     @labels = labels
@@ -15,11 +15,7 @@ class Book < Item
   end
 
   def can_be_archived?
-    @archived = if super or @cover_state == 'bad'
-                  true
-                else
-                  false
-                end
+    @archived = super || @cover_state == 'bad'
   end
 
   def add_label(label)
