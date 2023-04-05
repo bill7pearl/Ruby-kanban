@@ -96,4 +96,10 @@ class GameStore
       end
     end
   end
+  def save_data
+    return unless File.exist?('./data/games.json') && File.exist?('./data/authors.json')
+
+    File.write('./data/games.json', JSON.generate(games.map(&:to_hash)))
+    File.write('./data/authors.json', JSON.generate(authors.map(&:to_hash)))
+  end
 end
