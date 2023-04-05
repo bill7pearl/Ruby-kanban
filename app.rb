@@ -30,7 +30,9 @@ class App
     when '2'
       album = MusicAlbumDisplay.new('./data/albums.json')
       album.run
-    # when '3'
+    when '3'
+      game = GameStore.new
+      game.run
 
     when '4'
       puts 'Thanks for using 😘'
