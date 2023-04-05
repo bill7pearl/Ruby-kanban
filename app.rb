@@ -11,15 +11,15 @@ class App
   def main_menu
     puts "Welcome to our catalog 👋\nSelect an option: 👉"
     options = [
-      '+++++++++++++++++++++++++++++++++++++++++++++++',
-      '1 - List books options',
-      '***********************************************',
-      '2 - List music options',
-      '***********************************************',
-      '3 - List game options',
-      '***********************************************',
+      '--------------------------------------------------',
+      '1 - Books catalog',
+      '    *************************',
+      '2 - Music albums catalog',
+      '    *************************',
+      '3 - Games catalog',
+      '    *************************',
       '4 - Quit',
-      '+++++++++++++++++++++++++++++++++++++++++++++++'
+      '--------------------------------------------------'
     ]
     puts options
     option = gets.chomp.downcase
@@ -30,10 +30,12 @@ class App
     when '2'
       album = MusicAlbumDisplay.new('./data/albums.json')
       album.run
-    # when '3'
+    when '3'
+      game = GameStore.new
+      game.run
 
     when '4'
-      puts 'Thanks for using 😘'
+      puts 'Thanks for using our catalog 😘'
       nil
     else
       puts 'Invalid choice ❌! Please try again.'

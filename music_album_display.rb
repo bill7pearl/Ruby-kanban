@@ -31,7 +31,7 @@ class MusicAlbumDisplay
   def list_all_genres
     genres = @albums.map(&:genres).flatten.uniq
     if genres.empty?
-      puts 'No genres found! 🙁'
+      puts 'No genres found in the catalog! 🙁'
     else
       puts "************************************************\nAll Genres\n"
       genres.each do |genre|
@@ -69,12 +69,12 @@ class MusicAlbumDisplay
       when 3
         add_album
       when 4
-        print 'Thanks for using 😘'
+        print 'Thanks for using our catalog 😘'
         puts "\n"
         return app.main_menu
       else
         puts 'Ooops!!! Invalid option ❌'
-        return main_menu
+        return run
       end
     end
   end

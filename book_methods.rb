@@ -18,7 +18,7 @@ class BookMethods
 
   def list_books
     if @books.empty?
-      puts 'No books found!🙁'
+      puts 'No books found in the catalog!🙁'
     else
       puts "**************** Books Information 📕 *******************\n"
       @books.each do |book|
@@ -77,12 +77,12 @@ class BookMethods
       when 3
         add_book
       when 4
-        print 'Thanks for using 😘'
+        print 'Thanks for using our catalog 😘'
         puts "\n"
         return app.main_menu
       else
         puts 'Ooops!!! Invalid option ❌'
-        return main_menu
+        return run
       end
     end
   end
