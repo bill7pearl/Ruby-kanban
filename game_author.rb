@@ -64,10 +64,10 @@ class GameStore
 
   def load_data
     return unless File.exist?('./data/games.json') && File.exist?('./data/authors.json')
-  
+
     games_data = JSON.parse(File.read('./data/games.json'), object_class: Game)
     authors_data = JSON.parse(File.read('./data/authors.json'), object_class: Author)
-  
+
     @games = games_data.map do |game_data|
       game = Game.new(game_data['title'], game_data['multiplayer'], game_data['last_played_at'], game_data['publish_date'])
       game_data['authors'].each do |author_data|
@@ -76,13 +76,10 @@ class GameStore
       end
       game
     end
-  
-    @authors = []
-    @games.each do |game|
-      game.authors.each { |author| add_author(author) }
-    end
+
+    @authors = authors_data
   end
-  
+
   def run
     app = App.new
     loop do
@@ -124,5 +121,5 @@ class GameStore
         return run
       end
     end
-  end  
+  end
 end
