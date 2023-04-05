@@ -9,7 +9,6 @@ require 'json'
 
 class App
   def main_menu
-    app = App.new
     puts "Welcome to our catalog 👋\nSelect an option: 👉"
     options = [
       '+++++++++++++++++++++++++++++++++++++++++++++++',

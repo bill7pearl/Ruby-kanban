@@ -3,9 +3,9 @@ require_relative 'label'
 
 class Book < Item
   attr_reader :id
-  attr_accessor :publisher, :cover_state, :labels, :archived, :id
+  attr_accessor :publisher, :cover_state, :labels, :archived
 
-  def initialize(publisher, cover_state, labels: [], archived: false, id: nil)
+  def initialize(publisher, cover_state, labels: [], archived: false)
     super()
     @id = Random.rand(1..1000)
     @publisher = publisher
