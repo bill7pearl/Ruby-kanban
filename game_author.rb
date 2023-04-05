@@ -105,7 +105,6 @@ class GameStore
         add_game(game)
       when 4
         return app.main_menu
-        return
       else
         puts 'Ooops!!! Invalid option ❌'
         return main_menu
