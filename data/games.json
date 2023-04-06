@@ -1,1 +1,132 @@
-[{"id":125,"title":"PUBG","multiplayer":true,"last_played_at":"20170101","publish_date":"2016/01/01"},{"id":519,"title":"Overwatch","multiplayer":true,"last_played_at":"20000101","publish_date":"2000/01/01"}]
+{
+  "games": [
+    {
+      "id": 100,
+      "title": "tadaaaaa",
+      "multiplayer": true,
+      "last_played_at": "20000101",
+      "publish_date": "2000/01/01"
+    },
+    {
+      "id": 270,
+      "title": "ratrystystusu",
+      "multiplayer": true,
+      "last_played_at": "20000101",
+      "publish_date": "2000/01/01"
+    },
+    {
+      "id": 270,
+      "title": "ratrystystusu",
+      "multiplayer": true,
+      "last_played_at": "20000101",
+      "publish_date": "2000/01/01"
+    },
+    {
+      "id": 75,
+      "title": "tttttttttttttt",
+      "multiplayer": false,
+      "last_played_at": "20000101",
+      "publish_date": "2000/01/01"
+    },
+    {
+      "id": 270,
+      "title": "ratrystystusu",
+      "multiplayer": true,
+      "last_played_at": "20000101",
+      "publish_date": "2000/01/01"
+    },
+    {
+      "id": 75,
+      "title": "tttttttttttttt",
+      "multiplayer": false,
+      "last_played_at": "20000101",
+      "publish_date": "2000/01/01"
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "first_name": "zzzzzzzzzzzzzzzzzzzz",
+      "last_name": "wwwwwwwwwwwwwwwwwwwwww",
+      "items": [
+        {
+          "id": 100,
+          "title": "tadaaaaa",
+          "multiplayer": true,
+          "last_played_at": "20000101",
+          "publish_date": "2000/01/01"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "first_name": "artaryaety",
+      "last_name": "teysshsyuj",
+      "items": [
+        {
+          "id": 270,
+          "title": "ratrystystusu",
+          "multiplayer": true,
+          "last_played_at": "20000101",
+          "publish_date": "2000/01/01"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "first_name": "artaryaety",
+      "last_name": "teysshsyuj",
+      "items": [
+        {
+          "id": 270,
+          "title": "ratrystystusu",
+          "multiplayer": true,
+          "last_played_at": "20000101",
+          "publish_date": "2000/01/01"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "first_name": "qqqqqqqqqqqqqqqqq",
+      "last_name": "aaaaaaaaaaaaaaaaa",
+      "items": [
+        {
+          "id": 75,
+          "title": "tttttttttttttt",
+          "multiplayer": false,
+          "last_played_at": "20000101",
+          "publish_date": "2000/01/01"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "first_name": "artaryaety",
+      "last_name": "teysshsyuj",
+      "items": [
+        {
+          "id": 270,
+          "title": "ratrystystusu",
+          "multiplayer": true,
+          "last_played_at": "20000101",
+          "publish_date": "2000/01/01"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "first_name": "qqqqqqqqqqqqqqqqq",
+      "last_name": "aaaaaaaaaaaaaaaaa",
+      "items": [
+        {
+          "id": 75,
+          "title": "tttttttttttttt",
+          "multiplayer": false,
+          "last_played_at": "20000101",
+          "publish_date": "2000/01/01"
+        }
+      ]
+    }
+  ]
+}
