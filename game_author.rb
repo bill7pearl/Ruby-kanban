@@ -9,6 +9,7 @@ class GameStore
   def initialize
     @games = []
     @authors = []
+    load_data
   end
 
   def add_game(game)
@@ -56,28 +57,45 @@ class GameStore
   end
 
   def save_data
-    return unless File.exist?('./data/games.json') && File.exist?('./data/authors.json')
+    if File.exist?('./data/games.json')
+      existing_data = JSON.parse(File.read('./data/games.json'), symbolize_names: true)
+      data = {
+        games: existing_data[:games] + games.map(&:to_hash),
+        authors: existing_data[:authors] + authors.map(&:to_hash)
+      }
+    else
+      data = {
+        games: games.map(&:to_hash),
+        authors: authors.map(&:to_hash)
+      }
+    end
 
-    File.write('./data/games.json', JSON.generate(games.map(&:to_hash)))
-    File.write('./data/authors.json', JSON.generate(authors.map(&:to_hash)))
+    File.write('./data/games.json', JSON.pretty_generate(data))
   end
 
   def load_data
-    return unless File.exist?('./data/games.json') && File.exist?('./data/authors.json')
+    return unless File.exist?('./data/games.json')
 
-    games_data = JSON.parse(File.read('./data/games.json'), object_class: Game)
-    authors_data = JSON.parse(File.read('./data/authors.json'), object_class: Author)
+    data = JSON.parse(File.read('./data/games.json'), symbolize_names: true)
 
-    @games = games_data.map do |game_data|
-      game = Game.new(game_data['title'], game_data['multiplayer'], game_data['last_played_at'], game_data['publish_date'])
-      game_data['authors'].each do |author_data|
-        author = Author.new(author_data['first_name'], author_data['last_name'])
-        game.add_author(author)
+    @games = data[:games].map do |game_data|
+      game = Game.new(game_data[:title], game_data[:multiplayer], game_data[:last_played_at], game_data[:publish_date])
+      if game_data[:authors]
+        game_data[:authors].each do |author_data|
+          author = Author.new(author_data[:first_name], author_data[:last_name])
+          game.add_author(author)
+        end
       end
       game
     end
 
-    @authors = authors_data
+    @authors = []
+    if data[:authors]
+      data[:authors].each do |author_data|
+        author = Author.new(author_data[:first_name], author_data[:last_name])
+        authors << author
+      end
+    end
   end
 
   def run
