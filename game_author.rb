@@ -75,9 +75,9 @@ class GameStore
   
 
   def load_data
-    return unless File.exist?('./data/game_author.json')
+    return unless File.exist?('./data/games.json')
   
-    data = JSON.parse(File.read('./data/game_author.json'), symbolize_names: true)
+    data = JSON.parse(File.read('./data/games.json'), symbolize_names: true)
   
     @games = data[:games].map do |game_data|
       game = Game.new(game_data[:title], game_data[:multiplayer], game_data[:last_played_at], game_data[:publish_date])
