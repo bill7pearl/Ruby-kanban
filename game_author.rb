@@ -80,21 +80,19 @@ class GameStore
 
     @games = data[:games].map do |game_data|
       game = Game.new(game_data[:title], game_data[:multiplayer], game_data[:last_played_at], game_data[:publish_date])
-      if game_data[:authors]
-        game_data[:authors].each do |author_data|
-          author = Author.new(author_data[:first_name], author_data[:last_name])
-          game.add_author(author)
-        end
+      game_data[:authors]&.each do |author_data|
+        author = Author.new(author_data[:first_name], author_data[:last_name])
+        game.add_author(author)
       end
       game
     end
 
     @authors = []
-    if data[:authors]
-      data[:authors].each do |author_data|
-        author = Author.new(author_data[:first_name], author_data[:last_name])
-        authors << author
-      end
+    return unless data[:authors]
+
+    data[:authors].each do |author_data|
+      author = Author.new(author_data[:first_name], author_data[:last_name])
+      authors << author
     end
   end
 
